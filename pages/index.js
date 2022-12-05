@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Next.js Starter!</title>
+        <title>The Driver Support</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -17,7 +17,9 @@ export default function Home() {
           method="POST"
           data-netlify="true"
           style={{ width: "100%" }}
+          action="/success"
         >
+          <input type="hidden" name="form-name" value="support" />
           <div
             style={{
               display: "flex",
@@ -27,20 +29,19 @@ export default function Home() {
               gap: 10,
             }}
           >
-            <label for="email">Email Address:</label>
+            <label htmlFor="email">Email Address:</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               required
-              minlength="10"
-              maxlength="20"
+              minLength="10"
+              maxLength="20"
             />
-            <label for="name">Name:</label>
+            <label htmlFor="name">Name:</label>
             <input type="text" id="name" name="name" required />
-            <label for="question">Question:</label>
+            <label htmlFor="question">Question:</label>
             <textarea type="text" id="question" name="question" required />
-            <input type="hidden" name="support" value="contact" />
             <button type="submit">Submit</button>
           </div>
         </form>
